@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:533043624485:android:dc04487d5c1f56c7039dcc",
+        "mobilesdk_app_id": "1:533043624485:android:f73f3dd3ef811fdf039dcc",
         "android_client_info": {
-          "package_name": "com.padrinos.proyectoFinal"
+          "package_name": "com.example.flutter_ios_final"
         }
       },
       "oauth_client": [
