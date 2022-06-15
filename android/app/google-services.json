@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "533043624485",
+    "firebase_url": "https://proyectofinal-451af-default-rtdb.firebaseio.com",
+    "project_id": "proyectofinal-451af",
+    "storage_bucket": "proyectofinal-451af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533043624485:android:dc04487d5c1f56c7039dcc",
+        "android_client_info": {
+          "package_name": "com.padrinos.proyectoFinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533043624485-mttcr0muega4tfq4el4nkcleod5ffa3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ1fbAKS5TvV3dQ_mv6qPlo_r0ZXG3CHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533043624485-mttcr0muega4tfq4el4nkcleod5ffa3m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "533043624485-2l6b67fimod1ptiu41amqltogopnhoq4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.robertomacias.proyectoFinal"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
