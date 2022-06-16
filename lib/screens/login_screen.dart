@@ -18,14 +18,16 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: 10,),
-                  Text('Bienvenido', style: TextStyle(color: Colors.white, fontSize: 20)),
-                  SizedBox(height: 20,)
+
+                  Text('Login', style: TextStyle(color: Colors.grey.shade400, fontSize: 30)),
+
+                  SizedBox(height: 20),
+
+                  LoginForm(),
+                  
                 ],
               ),
             ),
-
-            SizedBox(height: 30),
-
           ],
         ),
       ),

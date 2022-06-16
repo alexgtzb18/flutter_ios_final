@@ -9,7 +9,7 @@ class AuthBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromRGBO(68, 80, 93, 100),
+      color: Color.fromARGB(255, 0, 41, 70), 
       width: double.infinity,
       height: double.infinity,
       child: Stack(children: [
@@ -34,7 +34,7 @@ class _HeaderIcon extends StatelessWidget {
         margin: EdgeInsets.only(top: 70),
         child: Icon(
           CupertinoIcons.person_crop_square,
-          color: Colors.white,
+          color: Color.fromARGB(255, 0, 78, 134),
           size: 100,
         ),
       ),
