@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ios_final/ui/input_decorations.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({Key? key}) : super(key: key);
+class RegisterForm extends StatelessWidget {
+  const RegisterForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,21 +33,27 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
+            TextFormField(
+                style: TextStyle(color: Colors.white),
+                autocorrect: false,
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecorations.authInputDecoration(
+                    hintText: '******',
+                    labelText: 'Confirm Password',
+                    prefixIcon: CupertinoIcons.lock)),
+            SizedBox(
+              height: 30,
+            ),
             CupertinoButton(
                 color: Color.fromARGB(255, 0, 78, 134),
                 borderRadius: BorderRadius.circular(10),
-                child: Text('Login'),
+                child: Text('Register'),
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, 'users');
                 }),
             SizedBox(
               height: 30,
             ),
-            CupertinoButton(
-                child: Text('Are you not register?'),
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, 'register');
-                })
           ],
         )),
         padding: EdgeInsets.all(5),
