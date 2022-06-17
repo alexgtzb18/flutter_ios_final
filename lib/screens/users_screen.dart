@@ -11,20 +11,24 @@ class UsersScreen extends StatefulWidget {
 }
 
 class _UsersScreen extends State<UsersScreen> {
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Users List'),
-        centerTitle: true,
-      ),
-      body: ListView.builder(
-        itemCount: FactoryData.users.length,
-        itemBuilder: (BuildContext context, int index) => 
-        item(FactoryData.users[index]),
-      )
-   );
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Color.fromARGB(255, 0, 6, 31),
+            title: Text('Users List'),
+            centerTitle: true,
+          ),
+          body: Container(
+            color: Color.fromARGB(255, 0, 78, 134),
+            child: ListView.builder(
+              itemCount: FactoryData.users.length,
+              itemBuilder: (BuildContext context, int index) =>
+                  item(FactoryData.users[index]),
+            ),
+          )),
+    );
   }
 
   Widget item(User user) {
@@ -33,10 +37,11 @@ class _UsersScreen extends State<UsersScreen> {
       actionExtentRatio: 0.25,
       actions: [
         IconSlideAction(
+          foregroundColor: Colors.white,
           caption: 'Archive',
-          color: Colors.blue,
+          color: Colors.amber,
           icon: Icons.archive,
-          onTap: () => print('Archive'),
+          onTap: () => print('Archive',),
         ),
       ],
       secondaryActions: [
@@ -52,6 +57,7 @@ class _UsersScreen extends State<UsersScreen> {
         )
       ],
       child: ListTile(
+        textColor: Colors.white,
         leading: CachedNetworkImage(
           imageUrl: user.photo,
           imageBuilder: (context, imageProvider) => Container(
