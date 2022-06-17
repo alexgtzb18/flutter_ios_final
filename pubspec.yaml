@@ -29,6 +29,7 @@ environment:
 dependencies:
   cached_network_image: ^3.2.0
   cloud_firestore: ^3.1.17
+  firebase_core:
   cupertino_icons: ^1.0.5
   firebase: ^9.0.3
   firebase_storage: ^10.2.17
@@ -36,6 +37,7 @@ dependencies:
     sdk: flutter
   flutter_slidable: ^0.6.0
   provider: ^6.0.3
+  firebase_auth: ^3.3.19
 
 dev_dependencies:
   flutter_lints: ^1.0.0
