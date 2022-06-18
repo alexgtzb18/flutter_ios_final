@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ios_final/screens/screens.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,9 +19,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: 'login',
       routes: {
-        'login': ( _ ) => LoginScreen(),
-        'register': ( _ ) => RegisterScreen(),
-        'users': ( _ ) => UsersScreen(),
+        'login': (_) => LoginScreen(),
+        'register': (_) => RegisterScreen(),
+        'users': (_) => UsersScreen(),
       },
     );
   }

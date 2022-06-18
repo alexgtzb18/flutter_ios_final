@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ios_final/data/user_data.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-
 import '../models/User.dart';
 
 class UsersScreen extends StatefulWidget {
@@ -11,6 +10,25 @@ class UsersScreen extends StatefulWidget {
 }
 
 class _UsersScreen extends State<UsersScreen> {
+  List userList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+
+  fetchData() async {
+    dynamic resultant = await User().getUsersList();
+    if (resultant == null) {
+      print("Error en fetch");
+    } else {
+      setState(() {
+        userList = resultant;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,15 +41,14 @@ class _UsersScreen extends State<UsersScreen> {
           body: Container(
             color: Color.fromARGB(255, 0, 78, 134),
             child: ListView.builder(
-              itemCount: FactoryData.users.length,
-              itemBuilder: (BuildContext context, int index) =>
-                  item(FactoryData.users[index]),
-            ),
+                itemCount: userList.length,
+                itemBuilder: (BuildContext context, int index) =>
+                    item(userList[index])),
           )),
     );
   }
 
-  Widget item(User user) {
+  Widget item(userList) {
     return Slidable(
       actionPane: SlidableDrawerActionPane(),
       actionExtentRatio: 0.25,
@@ -41,7 +58,9 @@ class _UsersScreen extends State<UsersScreen> {
           caption: 'Archive',
           color: Colors.amber,
           icon: Icons.archive,
-          onTap: () => print('Archive',),
+          onTap: () => print(
+            'Archive',
+          ),
         ),
       ],
       secondaryActions: [
@@ -51,7 +70,7 @@ class _UsersScreen extends State<UsersScreen> {
           icon: Icons.delete,
           onTap: () {
             setState(() {
-              FactoryData.users.removeWhere((element) => element.id == user.id);
+              // FactoryData.users.removeWhere((element) => element.id == user.id);
             });
           },
         )
@@ -59,7 +78,7 @@ class _UsersScreen extends State<UsersScreen> {
       child: ListTile(
         textColor: Colors.white,
         leading: CachedNetworkImage(
-          imageUrl: user.photo,
+          imageUrl: "https://cdn-icons-png.flaticon.com/512/147/147142.png",
           imageBuilder: (context, imageProvider) => Container(
             width: 40,
             height: 40,
@@ -74,8 +93,8 @@ class _UsersScreen extends State<UsersScreen> {
           ),
           errorWidget: (context, url, error) => Icon(Icons.error),
         ),
-        title: Text(user.name),
-        subtitle: Text(user.email),
+        title: Text(userList['email']),
+        subtitle: Text(userList['type']),
         onTap: () {},
       ),
     );
