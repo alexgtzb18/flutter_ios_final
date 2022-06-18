@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         'login': ( _ ) => LoginScreen(),
         'register': ( _ ) => RegisterScreen(),
         'users': ( _ ) => UsersScreen(),
+        'menu': ( _ ) => MenuScreen(),
       },
     );
   }

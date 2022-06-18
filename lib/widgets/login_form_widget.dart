@@ -68,7 +68,7 @@ class LoginForm extends StatelessWidget {
                   print(user);
                   if (user != null) {
                     print("Login realizado com exito");
-                    Navigator.pushReplacementNamed(context, 'users');
+                    Navigator.pushReplacementNamed(context, 'menu');
                   } else {
                     print("Login fallo");
                   }
